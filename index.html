@@ -3,16 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quoted - Quotes wrapped in responsive PWA!</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Quoted - Escape into a world of words!">
+    <link rel="apple-touch-icon" href="img/quoted192.png">
+
+    <meta name="msapplication-TileImage" content="img/quoted192.png">
+    <meta name="msapplication-TileColor" content="#242424">
+
+    <title>Quoted - Escape into a world of words!</title>
     <link rel="stylesheet" href="style.styl">
 </head>
 
 <body>
     <main>
-        <div id="quote">
-            Fetching your cup of quotes...
+        <div id="quote">Fetching your cup of quotes...</div>
+        <div id="controls" class="fade">
+            <div id="share">
+                <svg version="1.1" viewBox="0 0 13.229 13.229" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(175.22 -73.867)">
+                        <path d="m-164.59 73.867c-1.4297 0-2.6005 1.1708-2.6005 2.6005 0 0.2062 0.0362 0.40193 0.0822 0.59439l-3.5353 1.7676c-0.47772-0.56862-1.1781-0.94823-1.9746-0.94823-1.4297 0-2.6005 1.1708-2.6005 2.6005 0 1.4297 1.1708 2.6 2.6005 2.6 0.79722 0 1.4989-0.38077 1.9766-0.9503l3.5353 1.7676c-0.0462 0.19279-0.0843 0.38992-0.0843 0.59646 0 1.4297 1.1708 2.6005 2.6005 2.6005 1.4297 0 2.6005-1.1708 2.6005-2.6005 0-1.4297-1.1708-2.6005-2.6005-2.6005-0.79715 0-1.4989 0.37878-1.9766 0.94823l-3.5332-1.7676c0.046-0.19254 0.0823-0.38753 0.0823-0.59387 0-0.20662-0.0381-0.40366-0.0843-0.59646l3.5353-1.7676c0.47776 0.56961 1.1794 0.9503 1.9766 0.9503 1.4297 0 2.6-1.1708 2.6-2.6005 0-1.4297-1.1703-2.6005-2.6-2.6005zm0 1.1872c0.7887 0 1.4133 0.62461 1.4133 1.4133 0 0.78868-0.62459 1.4138-1.4133 1.4138-0.78868 0-1.4138-0.62513-1.4138-1.4138 0-0.78868 0.62513-1.4133 1.4138-1.4133zm-8.0281 4.0138c0.78869 0 1.4138 0.62513 1.4138 1.4138 0 0.78868-0.62512 1.4133-1.4138 1.4133-0.78867 0-1.4133-0.62461-1.4133-1.4133 0-0.78868 0.62462-1.4138 1.4133-1.4138zm8.0281 4.0138c0.7887 0 1.4133 0.62513 1.4133 1.4138 0 0.78868-0.6246 1.4117-1.4133 1.4117-0.78867 0-1.4138-0.62306-1.4138-1.4117 0-0.78868 0.62513-1.4138 1.4138-1.4138z" color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;paint-order:normal;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal" />
+                    </g>
+                </svg>
+            </div>
         </div>
     </main>
 

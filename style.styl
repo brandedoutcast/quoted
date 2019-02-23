@@ -1,4 +1,6 @@
-html, body
+@css { @import url("https://fonts.googleapis.com/css?family=Quicksand"); }
+
+body
     margin 0
     padding 0
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
@@ -9,17 +11,34 @@ main
     display flex
     flex-direction column
     align-items center
-    align-content center
-    justify-content center
-    background-color dodgerblue
+    background-color #242424
     user-select none
+    transition background-color 0.25s
+
+#quote, #controls
+    transition opacity 0.25s
+    display flex
 
 #quote
-    font-size 7vmin
     font-family 'Quicksand', sans-serif
-    transition opacity 0.25s
+    font-size 7vmin
     text-align center
     color white
+    flex 1
+    align-items center
 
 .fade
     opacity 0
+
+#controls
+    width 100%
+    padding 2vmin 0
+    justify-content center
+
+    #share
+        cursor pointer
+        
+        svg
+            width 4vmin
+            height 4vmin
+            fill whitesmoke

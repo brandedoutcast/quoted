@@ -1,2 +1,2 @@
 # Quoted
-A collection of quotes wrapped in a responsive PWA
+Escape into a world of words!

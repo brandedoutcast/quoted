@@ -1,7 +1,7 @@
 {
   "name": "quoted",
-  "version": "0.0.1",
-  "description": "Words of Worlds",
+  "version": "0.1.0",
+  "description": "Escape into a world of words!",
   "scripts": {
     "dev": "npx parcel index.html",
     "build": "npx parcel build index.html -d docs --public-url ./"
@@ -12,12 +12,14 @@
   },
   "author": "Rohith Reddy Kumbharkar <rohith@users.noreply.github.com> (https://rohith.github.io)",
   "license": "MIT",
+  "private": true,
   "bugs": {
     "url": "https://github.com/rohith/quoted/issues"
   },
   "homepage": "https://github.com/rohith/quoted#readme",
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
+    "parcel-plugin-sw-asset-urls": "^0.1.1",
     "stylus": "^0.54.5"
   }
 }
