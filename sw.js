@@ -1,4 +1,4 @@
-const cacheName = "quoted-cache-v0.1.0",
+const cacheName = "quoted-cache-v0.1.2",
     assets = [
         "./",
         "index.html",
@@ -6,7 +6,8 @@ const cacheName = "quoted-cache-v0.1.0",
         "script.js",
         "img/quoted192.png",
         "img/quoted512.png",
-        "https://fonts.googleapis.com/css?family=Quicksand"
+        "https://fonts.googleapis.com/css?family=Quicksand",
+        "https://raw.githubusercontent.com/rohith/quoted/master/data/quotes.md"
     ]
 
 self.addEventListener("install", event => {
@@ -28,24 +29,30 @@ self.addEventListener("activate", event =>
 )
 
 self.addEventListener("fetch", event => {
-    if (event.request.url === "https://raw.githubusercontent.com/rohith/quoted/master/data/quotes.md") {
+    let request = event.request
+    if (request.url === "https://raw.githubusercontent.com/rohith/quoted/master/data/quotes.md") {
         event.respondWith(
-            fetch(event.request)
-                .then(res => cacheResponse(event, res))
-                .catch(() => caches.match(event.request).then(r => r))
+            caches.match(request)
+                .then(cacheResponse => {
+                    let fetchResponse = fetchReq(request)
+                    return cacheResponse || fetchResponse
+                })
         )
     } else {
         event.respondWith(
-            caches.match(event.request)
-                .then(response => response || fetch(event.request).then(res => cacheResponse(event, res)))
+            caches.match(request).then(cacheResponse => cacheResponse || fetchReq(request))
         )
     }
 })
 
-function cacheResponse(event, response) {
-    if (response.ok) {
-        return caches.open(cacheName).then(cache => cache.put(event.request, response.clone())).then(() => response)
-    } else {
-        throw Error(response.statusText)
-    }
+function fetchReq(request) {
+    return fetch(request).then(netRes => {
+        let resClone = netRes.clone()
+        if (resClone.ok) {
+            caches.open(cacheName).then(cache => cache.put(request, resClone))
+        } else {
+            throw Error(response.statusText)
+        }
+        return netRes
+    })
 }
