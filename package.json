@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "description": "Escape into a world of words!",
   "scripts": {
+    "predev": "rm -rf dist",
     "dev": "npx parcel index.html",
-    "build": "npx parcel build index.html -d docs --public-url ./"
+    "prebuild": "rm -rf docs",
+    "build": "npx parcel build index.html -d docs --public-url ./",
+    "postbuild": "cp favicon.ico docs/favicon.ico"
   },
   "repository": {
     "type": "git",
