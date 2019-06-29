@@ -5,9 +5,8 @@
   "scripts": {
     "predev": "rm -rf dist",
     "dev": "npx parcel index.html",
-    "prebuild": "rm -rf docs",
-    "build": "npx parcel build index.html -d docs --public-url ./",
-    "postbuild": "cp favicon.ico docs/favicon.ico"
+    "build": "npx parcel build index.html --public-url ./",
+    "postbuild": "cp favicon.ico dist/favicon.ico"
   },
   "repository": {
     "type": "git",
