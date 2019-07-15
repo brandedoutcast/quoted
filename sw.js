@@ -1,4 +1,4 @@
-const cacheName = "quoted-cache-v0.1.2",
+const cacheName = "quoted-cache-v0.2.1",
     assets = [
         "./",
         "index.html",

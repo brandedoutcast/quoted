@@ -1,13 +1,12 @@
 {
   "name": "quoted",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Escape into a world of words!",
   "scripts": {
     "predev": "rm -rf dist",
-    "dev": "npx parcel index.html",
-    "prebuild": "rm -rf docs",
-    "build": "npx parcel build index.html -d docs --public-url ./",
-    "postbuild": "cp favicon.ico docs/favicon.ico"
+    "dev": "parcel index.html",
+    "build": "parcel build --no-source-maps index.html --public-url ./",
+    "postbuild": "cp favicon.ico dist/favicon.ico"
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,7 @@
   },
   "homepage": "https://github.com/rohith/quoted#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.11.0",
+    "parcel-bundler": "^1.12.3",
     "parcel-plugin-sw-asset-urls": "^0.1.1",
     "stylus": "^0.54.5"
   }
